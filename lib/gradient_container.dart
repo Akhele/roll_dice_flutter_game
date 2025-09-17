@@ -6,20 +6,41 @@ var startAlighnment = Alignment.topRight,
 
 
 class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key});
+   GradientContainer(this.color1,this.color2, {super.key});
 
+Color color1, color2;
   @override
   Widget build(context) {
     
     return Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [ Color.fromARGB(255, 68, 0, 255), const Color.fromARGB(255, 233, 83, 83)],
+              colors: [color1,color2],
               begin: startAlighnment,
               end: endAlignment,
             ),
           ),
-          child: MyText('Test1'),
+          child: Center(
+            child: 
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Image.asset('assets/images/dice-1.png',
+                  width: 200,),
+                SizedBox(height: 20,),
+                TextButton(onPressed: rollDice, 
+                            style: TextButton.styleFrom(foregroundColor: Colors.white,
+                                    textStyle: TextStyle(fontSize: 28)
+                            ),
+                            child: Text('Roll Dice'))
+            ],
+            )
+                  
+          ) 
         );
   }
+}
+rollDice()
+{
+
 }
