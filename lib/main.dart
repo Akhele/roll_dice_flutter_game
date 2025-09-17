@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:roll_dice_flutter_game/gradient_container.dart';
+
 
 void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        body: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Colors.deepPurpleAccent, Colors.lightBlue],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
-          child: Center(child: Text('BismiLLAH')),
-        ),
+        body: GradientContainer(),
       ),
     ),
   );
 }
+
+
